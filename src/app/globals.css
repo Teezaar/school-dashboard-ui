@@ -1,3 +1,164 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Font Definitions */
+@font-face {
+    font-family: "Vazir";
+    src: url("/fonts/Vazir-Regular-FD-WOL.eot");
+    src: url("/fonts/Vazir-Regular-FD-WOL.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/Vazir-Regular-FD-WOL.woff2") format("woff2"),
+        url("/fonts/Vazir-Regular-FD-WOL.woff") format("woff"),
+        url("/fonts/Vazir-Regular-FD-WOL.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url("/fonts/Vazir-Bold-FD-WOL.eot");
+    src: url("/fonts/Vazir-Bold-FD-WOL.eot?#iefix") format("embedded-opentype"),
+        url("/fonts/Vazir-Bold-FD-WOL.woff2") format("woff2"),
+        url("/fonts/Vazir-Bold-FD-WOL.woff") format("woff"),
+        url("/fonts/Vazir-Bold-FD-WOL.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url("/fonts/Vazir-Black-FD-WOL.eot");
+    src: url("/fonts/Vazir-Black-FD-WOL.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/Vazir-Black-FD-WOL.woff2") format("woff2"),
+        url("/fonts/Vazir-Black-FD-WOL.woff") format("woff"),
+        url("/fonts/Vazir-Black-FD-WOL.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url("/fonts/Vazir-Medium-FD-WOL.eot");
+    src: url("/fonts/Vazir-Medium-FD-WOL.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/Vazir-Medium-FD-WOL.woff2") format("woff2"),
+        url("/fonts/Vazir-Medium-FD-WOL.woff") format("woff"),
+        url("/fonts/Vazir-Medium-FD-WOL.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url("/fonts/Vazir-Light-FD-WOL.eot");
+    src: url("/fonts/Vazir-Light-FD-WOL.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/Vazir-Light-FD-WOL.woff2") format("woff2"),
+        url("/fonts/Vazir-Light-FD-WOL.woff") format("woff"),
+        url("/fonts/Vazir-Light-FD-WOL.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url("/fonts/Vazir-Thin-FD-WOL.eot");
+    src: url("/fonts/Vazir-Thin-FD-WOL.eot?#iefix") format("embedded-opentype"),
+        url("/fonts/Vazir-Thin-FD-WOL.woff2") format("woff2"),
+        url("/fonts/Vazir-Thin-FD-WOL.woff") format("woff"),
+        url("/fonts/Vazir-Thin-FD-WOL.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-BlackItalic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Global Body Font */
+body {
+    font-family: "Vazir", "Merriweather", sans-serif !important;
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* General Scrollbar Styles */
+.scrollable {
+    --sb-track-color: #e8f8fd;
+    --sb-thumb-color: #cfceff;
+    --sb-size: 8px;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 9px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 9px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .scrollable {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
