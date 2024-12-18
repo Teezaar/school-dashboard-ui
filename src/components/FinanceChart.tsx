@@ -16,7 +16,7 @@ const data = [
     {
         name: "فروردین",
         مخارج: 2000,
-        درآمد: 6800,
+        درآمد: 3800,
     },
     {
         name: "تیر",
@@ -32,22 +32,35 @@ const data = [
     {
         name: "دی",
         مخارج: 3890,
-        درآمد: 8350,
+        درآمد: 5350,
     },
-    {
-        name: "اسفند",
-        مخارج: 1490,
-        درآمد: 7300,
-    },
+    // {
+    //     name: "اسفند",
+    //     مخارج: 1490,
+    //     درآمد: 7300,
+    // },
 ];
 
 const FinanceChart = () => {
     return (
-        <div className="bg-white rounded-xl w-full h-full p-4">
+        <div className="glassUi rounded-xl w-full h-full p-4 flex-1 ">
             {/* TITLE */}
             <div className="flex justify-between items-center">
                 <h1 className="text-lg font-semibold">امور مالی</h1>
-                <Image src="/moreDark.png" alt="" width={20} height={20} />
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-7 h-7"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                </svg>
             </div>
             {/* CHART */}
             <ResponsiveContainer width="100%" height="90%">
@@ -88,13 +101,13 @@ const FinanceChart = () => {
                     <Line
                         type="monotone"
                         dataKey="درآمد"
-                        stroke="#CFCEFF"
+                        stroke="var(--myBlue)"
                         strokeWidth={4}
                     />
                     <Line
                         type="monotone"
                         dataKey="مخارج"
-                        stroke="#C3EBFA"
+                        stroke="var(--myPurple)"
                         strokeWidth={4}
                     />
                 </LineChart>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
     BarChart,
     Bar,
-    Rectangle,
     XAxis,
     YAxis,
     CartesianGrid,
@@ -43,10 +42,23 @@ const data = [
 
 const AttendanceChart = () => {
     return (
-        <div className="bg-white rounded-lg p-4 h-full">
+        <div className="glassUi rounded-lg p-4 h-full">
             <div className="flex justify-between items-center">
                 <h1 className="text-lg font-semibold">حضور و غیاب</h1>
-                <Image src="/moreDark.png" alt="" width={20} height={20} />
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-7 h-7"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                </svg>
             </div>
             <ResponsiveContainer width="100%" height="90%">
                 <BarChart width={500} height={300} barSize={18} data={data}>
@@ -85,13 +97,13 @@ const AttendanceChart = () => {
                     />
                     <Bar
                         dataKey="حاضر"
-                        fill="#CFCEFF"
+                        fill="var(--myBlue)" // Uses the predefined --myPurple CSS variable
                         legendType="circle"
                         radius={[10, 10, 0, 0]}
                     />
                     <Bar
                         dataKey="غایب"
-                        fill="#FAE27C"
+                        fill="var(--myPurple)" // Uses the predefined --myYellowLight CSS variable
                         legendType="circle"
                         radius={[10, 10, 0, 0]}
                     />

@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --mySky: #c6e7ff;
+    --mySkyLight: #cbf1f1;
+    --myRed: #cc2b52;
+    --myRedLight: #de7c7d;
+    --myPurple: #65589c;
+    --myPurpleLight: #dad3fd;
+    --myBlue: #8babf1;
+    --myBlueLight: #b3c7f7;
+    --myYellow: #fddd9a;
+    --myYellowLight: #fee7ba;
+}
+
 /* Font Definitions */
 @font-face {
     font-family: "Vazir";
@@ -129,6 +142,10 @@
     font-style: italic;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Global Body Font */
 body {
     font-family: "Vazir", "Merriweather", sans-serif !important;
@@ -136,10 +153,62 @@ body {
     text-align: right !important;
 }
 
+.specialbg {
+    background: radial-gradient(
+            at 86.04525862068965% 68.95833333333333%,
+            #dddeee 0px,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 12.769396551724139% 10%,
+            #ffffff 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 0% 61.25000000000001%, #84dfff 0px, transparent 50%),
+        radial-gradient(
+            at 93.48060344827587% 3.125%,
+            #ffffff 0px,
+            transparent 50%
+        ),
+        radial-gradient(
+            at 0.5926724137931034% 100%,
+            #bfdcfd 0px,
+            transparent 50%
+        ),
+        #edd2f3;
+}
+
 /* General Scrollbar Styles */
+
 .scrollable {
+    --sb-track-color: transparent;
+    --sb-thumb-color: #8babf1;
+    --sb-size: 5px;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 1px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 1px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .scrollable {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+/* .scrollable {
     --sb-track-color: #e8f8fd;
-    --sb-thumb-color: #cfceff;
+    --sb-thumb-color: var(--myBlue);
     --sb-size: 8px;
 }
 
@@ -160,5 +229,348 @@ body {
 @supports not selector(::-webkit-scrollbar) {
     .scrollable {
         scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+} */
+
+.scrollable-calendar .rbc-time-content {
+    --sb-track-color: #e8f8fd;
+    --sb-thumb-color: var(--myBlue);
+    --sb-size: 8px;
+
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+.scrollable-calendar .rbc-time-content::-webkit-scrollbar {
+    width: var(--sb-size);
+    height: var(--sb-size);
+}
+
+.scrollable-calendar .rbc-time-content::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 9px;
+}
+
+.scrollable-calendar .rbc-time-content::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 9px;
+}
+
+.react-calendar {
+    direction: rtl !important;
+    width: 100% !important;
+    border: none !important;
+    border-radius: 10 !important;
+    font-family: "Vazir", "Merriweather", sans-serif !important;
+}
+
+.react-calendar__tile--active {
+    background-color: var(--myPurpleLight) !important;
+    color: black !important;
+}
+
+.react-calendar__tile--now {
+    background-color: var(--mySky) !important;
+    color: black !important;
+}
+
+.react-calendar__navigation__label__labelText {
+    font-weight: 600 !important;
+}
+
+/* BIG CALENDAR */
+
+.rbc-calendar {
+    direction: ltr !important;
+    text-align: rigth !important;
+    width: 100% !important;
+    border: none !important;
+    border-radius: 10px !important;
+    margin-top: 10px !important;
+    padding: 12px 2px !important;
+    font-family: "Vazir", "Merriweather", sans-serif !important;
+}
+
+.rbc-header {
+    background-color: var(--mySky) !important;
+    color: black !important;
+    font-weight: 600 !important;
+    padding: 0px !important;
+    font-size: 14px !important;
+}
+
+.rbc-event {
+    padding: 0px !important;
+    border-radius: 0px !important;
+    border: none !important;
+    width: 100% !important;
+    height: 11.05% !important;
+    color: black !important;
+
+    background-color: var(--myBlue) !important;
+}
+.rbc-allday-cell {
+    display: none !important;
+}
+.rbc-row .rbc-time-header-cell {
+    border: none !important;
+}
+.rbc-time-header {
+    border: none !important;
+}
+.rbc-time-content {
+    border: none !important;
+}
+
+.rbc-time-view {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+.rbc-time-slot {
+    border: none !important;
+}
+
+.rbc-time-slot:first-child {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.rbc-time-slot:last-child {
+    display: none !important;
+}
+
+.rbc-event {
+    align-items: center !important;
+    justify-content: center !important;
+}
+.rbc-day-slot .rbc-event-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.rbc-event-content {
+    display: block !important;
+    height: 0px !important;
+}
+
+.rbc-event-label {
+    display: none !important;
+}
+
+.rbc-events-container {
+    width: 100% !important;
+}
+
+.rbc-row-content {
+    display: none !important;
+    hight: 0px !important;
+    width: 0px !important;
+    border: none !important;
+}
+
+.rbc-timeslot-group {
+    min-height: 120px !important;
+}
+
+.rbc-btn-group:first-child {
+    display: none !important;
+}
+
+.rbc-btn-group:last-child button {
+    border: none !important;
+    background-color: var(--myPurpleLight) !important;
+    margin-left: 3px !important;
+    border-radius: 5px !important;
+    font-size: 14px !important;
+    box-shadow: 1px !important;
+}
+
+.rbc-event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+}
+
+.rbc-event:nth-child(1) {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--myPurpleLight),
+        var(--mySky)
+    ) !important;
+}
+
+.rbc-event:nth-child(2) {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--myBlue),
+        var(--mySky)
+    ) !important;
+}
+
+.rbc-event:nth-child(3) {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--myYellowLight),
+        var(--myPurpleLight)
+    ) !important;
+}
+
+.rbc-event:nth-child(4) {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--myYellowLight),
+        var(--myYellow)
+    ) !important;
+}
+
+.rbc-event:nth-child(5) {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--myBlue),
+        var(--myYellowLight)
+    ) !important;
+}
+
+.rbc-event:nth-child(6) {
+    background-image: linear-gradient(
+        to bottom left,
+        var(--myRedLight),
+        var(--myYellowLight)
+    ) !important;
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 224 71.4% 4.1%;
+        --card: 0 0% 100%;
+        --card-foreground: 224 71.4% 4.1%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
+        --primary: 220.9 39.3% 11%;
+        --primary-foreground: 210 20% 98%;
+        --secondary: 220 14.3% 95.9%;
+        --secondary-foreground: 220.9 39.3% 11%;
+        --muted: 220 14.3% 95.9%;
+        --muted-foreground: 220 8.9% 46.1%;
+        --accent: 220 14.3% 95.9%;
+        --accent-foreground: 220.9 39.3% 11%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 20% 98%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 224 71.4% 4.1%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+    .dark {
+        --background: 224 71.4% 4.1%;
+        --foreground: 210 20% 98%;
+        --card: 224 71.4% 4.1%;
+        --card-foreground: 210 20% 98%;
+        --popover: 224 71.4% 4.1%;
+        --popover-foreground: 210 20% 98%;
+        --primary: 210 20% 98%;
+        --primary-foreground: 220.9 39.3% 11%;
+        --secondary: 215 27.9% 16.9%;
+        --secondary-foreground: 210 20% 98%;
+        --muted: 215 27.9% 16.9%;
+        --muted-foreground: 217.9 10.6% 64.9%;
+        --accent: 215 27.9% 16.9%;
+        --accent-foreground: 210 20% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 20% 98%;
+        --border: 215 27.9% 16.9%;
+        --input: 215 27.9% 16.9%;
+        --ring: 216 12.2% 83.9%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+.filter-buttons {
+    @apply w-8 h-8 flex items-center justify-center rounded-full bg-myYellowLight hover:bg-myYellow transition-all duration-500;
+}
+
+.will-change-transform {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.glassUi {
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.glassUim {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.glassUimodal {
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: none;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.react-calendar {
+    background: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.gradient-background {
+    background: linear-gradient(
+        245deg,
+        #ffffff,
+        #cbdaff,
+        #ffffff,
+        #fce2ff,
+        #ffffff,
+        #d2fffa,
+        #ffffff,
+        #fff1da
+    );
+    background-size: 420% 420%;
+    animation: gradient-animation 40s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
