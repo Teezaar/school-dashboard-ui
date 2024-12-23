@@ -1,5 +1,5 @@
 {
-    "name": "lama-dev-next-dashboard",
+    "name": "javad-dev-next-dashboard",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -17,6 +17,7 @@
         "@mui/material": "^6.1.10",
         "@mui/material-nextjs": "^6.1.9",
         "@nextui-org/react": "^2.6.8",
+        "@prisma/client": "^6.1.0",
         "@radix-ui/react-slot": "^1.1.0",
         "@radix-ui/themes": "^3.1.6",
         "@types/moment-jalaali": "^0.7.9",
@@ -28,6 +29,7 @@
         "moment-jalaali": "^0.10.4",
         "motion": "^11.13.5",
         "next": "^14.2.20",
+        "prisma": "^6.1.0",
         "re-chart": "^1.0.0",
         "react": "^18",
         "react-big-calendar": "^1.16.3",
@@ -39,6 +41,7 @@
         "recharts": "^2.14.1",
         "tailwind-merge": "^2.5.5",
         "tailwindcss-animate": "^1.0.7",
+        "zaman": "^2.1.1",
         "zod": "^3.24.1"
     },
     "overrides": {

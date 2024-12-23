@@ -104,6 +104,7 @@ const Navbar = () => {
                     alt="avatar"
                     width={36}
                     height={36}
+                    loading="lazy"
                     className="rounded-full"
                 />
             </div>

@@ -1,4 +1,5 @@
 import { FieldError } from "react-hook-form";
+import PersianDatePicker from "./PersianDatePicker";
 
 type InputFieldProps = {
     label: string;
@@ -32,6 +33,8 @@ const InputFields = ({
                     defaultValue={defaultValue}
                     {...inputProps}
                 />
+            ) : type === "date" ? (
+                <PersianDatePicker />
             ) : (
                 <input
                     type={type}
@@ -41,7 +44,6 @@ const InputFields = ({
                     {...inputProps}
                 />
             )}
-
             {error?.message && (
                 <p className="text-xs text-myRed">
                     {error?.message.toString()}

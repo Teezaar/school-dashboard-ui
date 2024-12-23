@@ -46,6 +46,7 @@ const TeacherListPage = () => {
                     alt="profile picture"
                     width={40}
                     height={40}
+                    loading="lazy"
                     className="w-8 h-8 rounded-full md:hidden xl:block object-cover"
                 />
                 <div className="">

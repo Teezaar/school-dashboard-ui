@@ -520,14 +520,14 @@ body {
 }
 
 .glassUi {
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(12px);
 }
 
 .glassUim {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: none;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(12px);
@@ -550,13 +550,17 @@ body {
 .gradient-background {
     background: linear-gradient(
         245deg,
-        #ffffff,
+        #e8e8e8,
+        #e8e8e8,
         #cbdaff,
-        #ffffff,
+        #e8e8e8,
+        #e8e8e8,
         #fce2ff,
-        #ffffff,
-        #d2fffa,
-        #ffffff,
+        #e8e8e8,
+        #e8e8e8,
+        #e8ffff,
+        #e8e8e8,
+        #e8e8e8,
         #fff1da
     );
     background-size: 420% 420%;
@@ -573,4 +577,46 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.custom-input {
+    border-radius: 6px;
+    border: 1px #d7d1d3 solid;
+    padding: 4px 12px;
+    background-color: white;
+    height: 41px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calendar-container {
+    width: 100%; /* Ensure the container takes full width */
+
+    display: flex; /* Use flex to manage children layout */
+    justify-content: center; /* Center horizontally if needed */
+    align-items: center; /* Center vertically if needed */
+}
+
+.rmdp-calendar,
+.rmdp-rtl {
+    width: 100% !important;
+}
+.rmdp-shadow {
+    box-shadow: none !important;
+}
+
+.rmdp-week {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: around !important;
+}
+
+.rmdp-wrapper,
+.rmdp-shadow,
+.full-size-calendar {
+    width: 100% !important;
+}
+
+.rmdp-day-picker {
+    display: block !important;
 }

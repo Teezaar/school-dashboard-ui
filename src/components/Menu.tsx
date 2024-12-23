@@ -118,7 +118,9 @@ const Menu = () => {
     const [active, setActive] = useState<string>("");
 
     const handleLinkClick = (href: string) => {
-        setActive(href);
+        if (active !== href) {
+            setActive(href);
+        }
     };
 
     return (
@@ -126,7 +128,7 @@ const Menu = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.75 }}
+            transition={{ ease: "easeInOut", duration: 0.4 }}
             className="text-sm"
         >
             {menuItems.map((i) => (
@@ -142,6 +144,7 @@ const Menu = () => {
                             return (
                                 <Link
                                     href={item.href}
+                                    prefetch={true}
                                     key={item.label}
                                     className={`flex items-center justify-center lg:justify-start gap-4 py-1.5 md:px-2 lg:rounded-md transition-all duration-300 will-change-transform
                                     ${
@@ -156,11 +159,13 @@ const Menu = () => {
                                         src={item.icon}
                                         width={20}
                                         height={20}
+                                        loading="lazy"
                                         alt="menu icon"
                                     />
                                     <span className="hidden lg:block">
                                         {item.label}
                                     </span>
+                                    
                                 </Link>
                             );
                         }

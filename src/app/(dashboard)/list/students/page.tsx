@@ -30,7 +30,7 @@ const StudentListPage = () => {
     const renderRow = (item: Student) => (
         <tr
             key={item.id}
-            className="border-b-2 border-gray-300 text-sm hover:bg-myPurpleLight  odd:bg-gray-200"
+            className="border-b-2 border-gray-300 text-sm hover:bg-myPurpleLight odd:bg-gray-200"
         >
             <td className="flex items-center gap-4 p-2">
                 <Image
@@ -38,6 +38,7 @@ const StudentListPage = () => {
                     alt="profile picture"
                     width={40}
                     height={40}
+                    loading="lazy"
                     className="w-8 h-8 rounded-full md:hidden xl:block object-cover"
                 />
                 <div className="">

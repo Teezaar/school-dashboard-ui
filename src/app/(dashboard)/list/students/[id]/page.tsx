@@ -20,6 +20,7 @@ const SingleTeacherPage = () => {
                                 alt=""
                                 width={144}
                                 height={144}
+                                loading="lazy"
                                 className="min-w-28 min-h-28 max-w-36 max-h-36 rounded-full object-cover"
                             />
                         </div>
@@ -37,6 +38,7 @@ const SingleTeacherPage = () => {
                                     <Image
                                         src="/blood.png"
                                         alt=""
+                                        loading="lazy"
                                         width={14}
                                         height={14}
                                     />
@@ -47,6 +49,7 @@ const SingleTeacherPage = () => {
                                         src="/date.png"
                                         alt=""
                                         width={14}
+                                        loading="lazy"
                                         height={14}
                                     />
                                     <span>78/03/23</span>
@@ -56,6 +59,7 @@ const SingleTeacherPage = () => {
                                         src="/mail.png"
                                         alt=""
                                         width={14}
+                                        loading="lazy"
                                         height={14}
                                     />
                                     <span>javad@gmail.com</span>
@@ -65,6 +69,7 @@ const SingleTeacherPage = () => {
                                         src="/phone.png"
                                         alt=""
                                         width={14}
+                                        loading="lazy"
                                         height={14}
                                     />
                                     <span>1234567890</span>
@@ -80,6 +85,7 @@ const SingleTeacherPage = () => {
                                 alt=""
                                 width={24}
                                 height={24}
+                                loading="lazy"
                                 className="w-6 h-6"
                             />
                             <div className="text-xs text-gray-600">
@@ -95,6 +101,7 @@ const SingleTeacherPage = () => {
                                 alt=""
                                 width={24}
                                 height={24}
+                                loading="lazy"
                                 className="w-6 h-6"
                             />
                             <div className="text-xs text-gray-600">
@@ -112,6 +119,7 @@ const SingleTeacherPage = () => {
                                 alt=""
                                 width={24}
                                 height={24}
+                                loading="lazy"
                                 className="w-6 h-6"
                             />
                             <div className="text-xs text-gray-600">
@@ -127,6 +135,7 @@ const SingleTeacherPage = () => {
                                 alt=""
                                 width={24}
                                 height={24}
+                                loading="lazy"
                                 className="w-6 h-6"
                             />
                             <div className="text-xs text-gray-600">

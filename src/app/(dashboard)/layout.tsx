@@ -21,6 +21,7 @@ export default function DashboardLayout({
                         width={32}
                         height={32}
                         alt="logo"
+                        loading="lazy"
                         className="mt-2 mb-4"
                     />
                     <span className="hidden lg:block font-bold">

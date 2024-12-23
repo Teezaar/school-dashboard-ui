@@ -7,6 +7,7 @@ import DateObject from "react-date-object";
 import persian from "react-date-object/calendars/persian"; // Import Persian calendar
 
 import { Calendar } from "react-calendar";
+import PersianCalendar from "./PersianCalendar";
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -55,13 +56,7 @@ const EventCalendar = () => {
 
     return (
         <div className="glassUi rounded-lg p-2">
-            <Calendar
-                className="glassUi rounded-lg"
-                onChange={handleChange}
-                value={value}
-                locale="fa-IR" // Apply Persian locale
-                calendarType="hebrew" // You can change this to "persian" once it's implemented with Jalali support
-            />
+            <PersianCalendar />
 
             <div className="flex items-center justify-between">
                 <h1 className="text-lg font-semibold my-4">رویدادها</h1>
