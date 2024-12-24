@@ -123,6 +123,14 @@ const TeacherForm = ({ type, data }: TeacherFormProps) => {
                     register={register}
                     error={errors?.phone}
                 />
+                <InputFields
+                    label="تاریخ تولد"
+                    type="date"
+                    name="birthday"
+                    defaultValue={data?.birthday}
+                    register={register}
+                    error={errors?.birthday}
+                />
                 <div className="flex flex-col gap-1 w-full md:w-1/4">
                     <label htmlFor="" className="text-xs text-gray-500">
                         گروه خونی
@@ -147,14 +155,7 @@ const TeacherForm = ({ type, data }: TeacherFormProps) => {
                         </p>
                     )}
                 </div>
-                <InputFields
-                    label="تاریخ تولد"
-                    type="date"
-                    name="birthday"
-                    defaultValue={data?.birthday}
-                    register={register}
-                    error={errors?.birthday}
-                />{" "}
+
                 <div className="flex flex-col gap-1 w-full md:w-1/4 justify-center">
                     <label htmlFor="" className="text-xs text-gray-500">
                         جنسیت

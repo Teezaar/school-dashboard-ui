@@ -9,6 +9,9 @@ type InputFieldProps = {
     defaultValue?: string;
     error?: FieldError;
     inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+    customProps?: {
+        datePickerClass?: string;
+    };
 };
 
 const InputFields = ({
@@ -19,6 +22,7 @@ const InputFields = ({
     defaultValue,
     error,
     inputProps,
+    customProps,
 }: InputFieldProps) => {
     return (
         <div className="flex flex-col gap-1 w-full md:w-1/4">
@@ -29,12 +33,12 @@ const InputFields = ({
             {type === "textarea" ? (
                 <textarea
                     {...register(name)}
-                    className="w-full md:min-w-[600px] text-sm text-gray-500 p-2 rounded-md ring-1 ring-gray-300 min-h-[120px]"
+                    className="w-full md:min-w-[550px] text-sm text-gray-500 p-2 rounded-md ring-1 ring-gray-300 min-h-[120px]"
                     defaultValue={defaultValue}
                     {...inputProps}
                 />
             ) : type === "date" ? (
-                <PersianDatePicker />
+                <PersianDatePicker className={customProps?.datePickerClass} />
             ) : (
                 <input
                     type={type}

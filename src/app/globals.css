@@ -620,3 +620,13 @@ body {
 .rmdp-day-picker {
     display: block !important;
 }
+
+/* .rmdp-container div {
+    transform: none !important;
+} */
+
+.ep-arrow,
+.rmdp-ep-arrow,
+.rmdp-ep-shadow {
+    display: none !important;
+}

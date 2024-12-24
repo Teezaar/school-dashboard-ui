@@ -117,8 +117,8 @@ const FormModal = ({ table, type, data, id }: ModalProps) => {
                                 ease: "easeInOut",
                                 duration: 0.5,
                             }}
-                            className="glassUimodal p-8 rounded-md scrollable w-[75%] md:w-[85%]
-                            lg:w-[75%] xl:w-[65%] 2xl:w-[60%] relative max-h-[calc(100vh-32px)] overflow-y-auto"
+                            className="glassUimodal p-8 rounded-md scrollable w-[80%] md:w-[80%]
+                            lg:w-[80%] xl:w-[70%] 2xl:w-[70%] relative max-h-[calc(100vh-32px)] overflow-y-auto "
                         >
                             <button
                                 className="mt-4"

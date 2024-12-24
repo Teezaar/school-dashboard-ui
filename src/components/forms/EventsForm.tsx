@@ -42,7 +42,7 @@ const TeacherForm = ({ type, data }: TeacherFormProps) => {
             </span>
             <div className="flex flex-wrap gap-4 justify-between items-center">
                 <InputFields
-                    label="عنوان اطلاعیه"
+                    label="عنوان رویداد"
                     type="text"
                     name="announcementTitle"
                     defaultValue={data?.announcementTitle}
@@ -65,15 +65,6 @@ const TeacherForm = ({ type, data }: TeacherFormProps) => {
                     defaultValue={data?.date}
                     register={register}
                     error={errors?.date}
-                    customProps={{ datePickerClass: "announcement-modal" }}
-                />
-                <InputFields
-                    label="متن"
-                    type="textarea"
-                    name="content"
-                    defaultValue={data?.content}
-                    register={register}
-                    error={errors?.content}
                 />
             </div>
             <button

@@ -3,6 +3,7 @@ import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import DateObject from "react-date-object";
+import highlightWeekends from "react-multi-date-picker/plugins/highlight_weekends";
 
 const months = [
     ["فر", "ف"],
@@ -28,7 +29,7 @@ const weekDays = [
     ["جمعه", "ج"],
 ];
 
-const PersianDatePicker = () => {
+const PersianDatePicker = ({ className }: { className?: string }) => {
     const [value, setValue] = useState(new Date());
 
     const handleDateChange = (date: DateObject | null, options: any) => {
@@ -36,9 +37,10 @@ const PersianDatePicker = () => {
     };
 
     return (
-        <div className="w-full">
+        <div className={`w-full ${className ?? ""}`}>
             <DatePicker
                 // months={months}
+                plugins={[highlightWeekends()]}
                 weekDays={weekDays}
                 value={value}
                 onChange={handleDateChange}
@@ -46,11 +48,12 @@ const PersianDatePicker = () => {
                 calendar={persian}
                 locale={persian_fa}
                 inputClass="custom-input"
-                position="top-end"
+                position={
+                    className == "announcement-modal" ? "top-start" : "top-end"
+                }
                 fixMainPosition={true}
                 fixRelativePosition={true}
-                offsetY={0}
-                offsetX={0}
+                offsetY={className === "announcement-modal" ? -200 : 0}
             />
         </div>
     );

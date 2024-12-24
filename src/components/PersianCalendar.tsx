@@ -4,6 +4,7 @@ import { Calendar } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import DateObject from "react-date-object";
+import weekends from "react-multi-date-picker/plugins/highlight_weekends";
 
 const weekDays = [
     ["شنبه", "ش"],
@@ -18,13 +19,14 @@ const weekDays = [
 const PersianCalendar = () => {
     const [value, setValue] = useState(new Date());
 
-    const handleDateChange = (date: DateObject | null, options: any) => {
+    const handleDateChange = (date: DateObject | null) => {
         setValue(date?.toDate() ?? new Date());
     };
 
     return (
         <div className="calendar-container">
             <Calendar
+                plugins={[weekends()]}
                 numberOfMonths={1}
                 className="full-size-calendar"
                 weekDays={weekDays}
@@ -33,7 +35,6 @@ const PersianCalendar = () => {
                 showOtherDays
                 calendar={persian}
                 locale={persian_fa}
-                inputClass="custom-input-calendar"
             />
         </div>
     );
